@@ -214,13 +214,6 @@
         </div>
       </div>
 
-
-      <!-- ---------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ---------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ---------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ---------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ---------------------------------------------------------------------------------------------------------------------- -->
-      <!-- ---------------------------------------------------------------------------------------------------------------------- -->
       <!-- big ticket TWO-->
 
       <div class=" flex flex-col lg:flex-row gap-3 lg:mx-[130px]">
@@ -414,23 +407,24 @@
             <form name="yourForm">
               <div>
                 <label for="passengerName">Passenger Name*</label><br><br>
-                <input type="text" id="passengerName" onKeyup="checkform()"
+                <input type="text" id="passengerName"
                   class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold " placeholder="     Enter your Name"
                   name="passengerName" required>
               </div><br>
               <div>
                 <label for="phoneNumber">Phone Number*</label><br><br>
-                <input type="tel" id="phoneNumber" onKeyup="checkform()" class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold"
+                <input type="number" id="phoneNumber" onkeyup="if(this.value.length > 0) document.getElementById('next').disabled = false; else document.getElementById('next').disabled = true;"
+                class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold"
                   placeholder="      Enter your Phone Number" name="phoneNumber" required>
               </div><br>
               <div>
                 <label for="email">Email Address</label><br><br>
-                <input type="email" id="email" onKeyup="checkform()" class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold "
+                <input type="email" id="email" class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold "
                   placeholder="      Enter your email address" name="email" required>
               </div>
 
-                <button onclick="my_modal_5.showModal()" type="submit"  id="next"
-                  class="w-full bg-[#1DD100] text-[20px] font-extrabold py-5 text-white font-raleway rounded-2xl mt-6 mb-6">Next</button>
+                <button onclick="my_modal_5.showModal()" type="submit"  id="next" 
+                  class="w-full bg-[#1DD100] text-[20px] font-extrabold py-5 text-white font-raleway rounded-2xl mt-6 mb-6" disabled>Next</button>
               
             </form>
           </div>
@@ -511,7 +505,20 @@
     </section>
 
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js">
+    function validateForm() {
+    var phoneNumberInput = document.getElementById('phoneNumber');
+    var submitButton = document.getElementById('next');
+
+    // Check if the phone number input is empty
+    if (phoneNumberInput.value.trim() === '') {
+        submitButton.disabled = true; // Disable the button
+    } else {
+        submitButton.disabled = false; // Enable the button
+    }
+}
+
+  </script>
 </body>
 
 </html>

@@ -127,21 +127,3 @@ function setGrandPrice(elementId){
    element.classList.add('bg-[#1DD100]','text-white', 'text-[20px]','px-[5px]','py-[2px]','rounded-3xl','text-center');
 }
 
-
-// check form input
-
-function checkform() {
-  const formElements = document.forms["yourForm"].elements;
-  let submitBtnActive = true;
-
-  for (let inputEl = 0; inputEl < formElements.length; inputEl++) {
-    if (formElements[inputEl].value.length == 0) {
-      submitBtnActive = false;
-    }
-  }
-  if (submitBtnActive) {
-    document.getElementById("next").disabled = false;
-  } else {
-    document.getElementById("next").disabled = "disabled";
-  }
-}
