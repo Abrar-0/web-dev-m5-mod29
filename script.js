@@ -19,10 +19,10 @@ function book(e){
         count=count-1;
         addToCart(e.target.id);
     }else if(count<=0){
-        alert("You cannot book more than 4 seats at once. Sorry for the inconvenience\nSelect Again!");
+        alert("One person can only book a maximum of 4 seats. Sorry!!");
         location.reload();
     }else if(arr.includes(e.target.id)=== true){
-        alert("You cannot choose the same seat twice\nPlease select another seat!\nSelect Again");
+        alert("You cannot choose the same seat twice.");
         location.reload();
     }else{
         location.reload();
@@ -70,7 +70,7 @@ function discount(){
         const inputContainer= document.getElementById('input-container');
         inputContainer.classList.add('hidden');
         grandPrize.innerText=discountedPrice;
-        setGrandPrize('green');
+        setGrandPrice('green');
     }else if(coupon.value === 'Couple 20'){
         const price2=document.getElementById('nonDiscountMoney');
         const tkText2= (price2.innerText);
@@ -83,7 +83,7 @@ function discount(){
         const inputContainer2= document.getElementById('input-container');
         inputContainer2.classList.add('hidden');
         grandPrize2.innerText=discountedPrice2;
-        setGrandPrize('green');
+        setGrandPrice('green');
     }else{
         const price3=document.getElementById('nonDiscountMoney');
         const tkText3= (price3.innerText);
@@ -122,7 +122,26 @@ function seatUp(){
 }
 
 
-function setGrandPrize(elementId){
+function setGrandPrice(elementId){
    const element= document.getElementById(elementId);
    element.classList.add('bg-[#1DD100]','text-white', 'text-[20px]','px-[5px]','py-[2px]','rounded-3xl','text-center');
+}
+
+
+// check form input
+
+function checkform() {
+  const formElements = document.forms["yourForm"].elements;
+  let submitBtnActive = true;
+
+  for (let inputEl = 0; inputEl < formElements.length; inputEl++) {
+    if (formElements[inputEl].value.length == 0) {
+      submitBtnActive = false;
+    }
+  }
+  if (submitBtnActive) {
+    document.getElementById("next").disabled = false;
+  } else {
+    document.getElementById("next").disabled = "disabled";
+  }
 }

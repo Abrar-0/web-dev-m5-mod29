@@ -407,32 +407,29 @@
           </div>
 
           <div class="mt-4">
-            <form>
+            <form name="yourForm">
               <div>
                 <label for="passengerName">Passenger Name*</label><br><br>
-                <input type="text" id="passengerName"
+                <input type="text" id="passengerName" onKeyup="checkform()"
                   class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold " placeholder="     Enter your Name"
                   name="passengerName" required>
               </div><br>
               <div>
                 <label for="phoneNumber">Phone Number*</label><br><br>
-                <input type="tel" id="phoneNumber" class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold"
+                <input type="tel" id="phoneNumber" onKeyup="checkform()" class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold"
                   placeholder="      Enter your Phone Number" name="phoneNumber" required>
               </div><br>
               <div>
                 <label for="email">Email Address</label><br><br>
-                <input type="email" id="email" class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold "
+                <input type="email" id="email" onKeyup="checkform()" class="w-full h-12 rounded-2xl box-content bg-slate-100 font-bold "
                   placeholder="      Enter your email address" name="email" required>
               </div>
 
+                <button onclick="my_modal_5.showModal()" type="submit"  id="next"
+                  class="w-full bg-[#1DD100] text-[20px] font-extrabold py-5 text-white font-raleway rounded-2xl mt-6 mb-6">Next</button>
+              
             </form>
           </div>
-
-          <div class="flex justify-center mt-6 mb-6">
-            <button onclick="my_modal_5.showModal()"
-              class="w-full bg-[#1DD100] text-[20px] font-extrabold py-5 text-white font-raleway rounded-2xl">Next</button>
-          </div>
-
 
           <div class="flex justify-around">
             <p><a href="#">Terms and Conditions</a></p>

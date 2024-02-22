@@ -2,3 +2,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
+#next:disabled {
+    background: #ccc;
+    color: white;
+  }
