@@ -71,6 +71,7 @@ function discount(){
         inputContainer.classList.add('hidden');
         grandPrize.innerText=discountedPrice;
         setGrandPrice('green');
+
     }else if(coupon.value === 'Couple 20'){
         const price2=document.getElementById('nonDiscountMoney');
         const tkText2= (price2.innerText);
@@ -89,6 +90,7 @@ function discount(){
         const tkText3= (price3.innerText);
         const tkInt3= parseInt(tkText3);
         
+        alert("Invalid Coupon Code");
         const grandPrize3= document.getElementById('grandTotal');
         grandPrize3.innerText=tkInt3;
     }
